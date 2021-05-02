@@ -1,0 +1,39 @@
+<div class="container-fulid">
+    <nav class="navbar navbar-light bg-primary">
+        <a class="navbar-brand text-light" href="#">
+            Evolent Application
+        </a>
+    </nav>
+</div>
+<div class="container-fulid">
+
+    <div class="col-12 mt-2">
+        <button class="btn btn-primary float-right mb-2" (click)="open()">Add Contact</button>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Active</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of contactList;let i=index;">
+                        <td>{{i+1}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.phone}}</td>
+                        <td>{{data.status}}</td>
+                        <td><button class="btn btn-default  border rounded border-dark mx-2" (click)="edit(data)"><i
+                                    class="fa fa-pencil"></i></button>
+                            <button class="btn btn-default border rounded border-dark mx-2" (click)="delete(i)"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
